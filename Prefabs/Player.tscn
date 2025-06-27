@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ivytdkbvg3t"]
+
+[ext_resource type="PackedScene" uid="uid://cruv12r0ll6sm" path="res://models/car/car.gltf" id="1_um8lo"]
+[ext_resource type="Script" uid="uid://eav5nve874a4" path="res://Scripts/Player.gd" id="1_x3d5u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djkur"]
+size = Vector3(0.2, 0.0785278, 0.137109)
+
+[node name="CharacterBody3D" type="VehicleBody3D"]
+script = ExtResource("1_x3d5u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0445496, 0.0314453)
+shape = SubResource("BoxShape3D_djkur")
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_um8lo")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0.172039, 0.18834)
+current = true

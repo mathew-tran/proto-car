@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://mplskx7kyhd8"]
+
+[ext_resource type="PackedScene" uid="uid://c4ivytdkbvg3t" path="res://Prefabs/Player.tscn" id="1_xhtwi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g6ejq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhtwi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52747, 0)
+mesh = SubResource("BoxMesh_g6ejq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52747, 0)
+shape = SubResource("BoxShape3D_xhtwi")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_xhtwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0538364, 0.340016)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)
